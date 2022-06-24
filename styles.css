@@ -1,0 +1,97 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(212, 45%, 89%);   
+    height: 100vh;
+    color: var(--dark-blue);
+}
+
+:root {
+    --light-grey: #F2F2F2;
+    --white: #FFFFFF;
+    --medium-grey: #CFCFCF;
+    --green: #036B0B;
+    --dark-blue: #070127;
+    --neuteral-blue: #605D74;
+}
+
+.container {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 350px;
+    background-color:var(--light-grey);
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.total {
+    background-color: var(--white);
+    padding: 23px 0;
+    text-align: right;
+}
+
+.calculator {
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.tip-amounts {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tip-amounts > * {
+    background-color: #036B0B;
+    width: 70px;
+}
+
+.number-btns {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 6px;
+    grid-template-areas: 
+    "9 8 7"
+    "6 5 4"
+    "3 2 1"
+    "back zero dot";
+}
+
+#save {
+    display: none;
+}
+
+.number-btn:nth-child(10) {
+    grid-area: zero;
+}
+
+.number-btn:nth-child(11) {
+    grid-area: back;
+    
+}
+
+.number-btn:nth-child(12) {
+    grid-area: dot;
+    
+}
