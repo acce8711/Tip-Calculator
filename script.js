@@ -14,6 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
             numBtn.classList.add("number-btn")
             numBtn.innerHTML = numBtn.id;
             numbers.appendChild(numBtn)
+            if(numBtn.id == -1){
+                numBtn.innerHTML = "";
+                let icon = document.createElement("img");
+                icon.setAttribute("src", "images/arrow-left.svg");
+                numBtn.appendChild(icon);
+            }
+            else if(numBtn.id == -2) {
+                numBtn.innerHTML = "";
+                let icon = document.createElement("img");
+                icon.setAttribute("src", "images/ellipse.svg");
+                numBtn.appendChild(icon);
+            }
         }
     }
 
@@ -56,18 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
         
 
     function removeNum(selectedArray) {
-        if (selectedArray.length > 1) {
+        if (selectedArray.length > 0) {
             total.pop()
         }
-        console.log(selectedArray);
+        console.log(selectedArray + "hi");
     }
 
     $(".tip-amount").click((e) =>{
+        let numOfTips = document.getElementsByClassName("tip-amount");
+        for(i=0; i<4; i++) {
+            numOfTips[i].classList.remove("selected-tip");
+        }
         let tipID = e.target.id;
-        tipAmount = tipID
-        console.log(tipAmount)
+        tipAmount = tipID;
         document.getElementById("tip-value").innerHTML = tipAmount*100 + "% tip";
-        calculateTip()
+        e.target.classList.add('selected-tip')
+        calculateTip();
     })
 
     $(".custom-tip").click((e) => {

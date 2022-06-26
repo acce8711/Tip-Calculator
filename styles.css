@@ -15,6 +15,17 @@ body {
     color: var(--dark-blue);
 }
 
+h2 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--neuteral-blue);
+    margin: 5px 0;
+}
+
 :root {
     --light-grey: #F2F2F2;
     --white: #FFFFFF;
@@ -61,21 +72,47 @@ body {
 }
 
 .tip-amounts > * {
-    background-color: #036B0B;
+    background-color: var(--light-grey);
     width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.tip-amounts > *:hover {
+    background-color: var(--medium-grey);
+}
+
+.selected-tip {
+    background-color: var(--medium-grey);
 }
 
 .number-btns {
+    padding-top: 30px;
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 50px);
     grid-gap: 6px;
     grid-template-areas: 
     "9 8 7"
     "6 5 4"
     "3 2 1"
     "back zero dot";
+}
+
+.number-btns > * {
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.number-btns > *:hover {
+    background-color: var(--medium-grey);
 }
 
 #save {
